@@ -129,7 +129,7 @@ class _KeyPadState extends State<KeyPad> {
           symbol.text,
           style: TextStyle(
             color: Colors.grey,
-            fontSize: 14.0 * 2.5,
+            fontSize: 14.0 * 3.0,
           ),
         ),
       );
