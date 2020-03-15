@@ -58,19 +58,18 @@ const List<MathSymbol> numberSymbols = <MathSymbol>[
   MathSymbols.one,
   MathSymbols.two,
   MathSymbols.three,
-  MathSymbols.clear,
-  MathSymbols.decimal,
   MathSymbols.zero,
+  MathSymbols.decimal,
+  MathSymbols.clear,
 ];
 const List<MathSymbol> opSymbols = <MathSymbol>[
+  MathSymbols.delete,
   MathSymbols.percent,
-  MathSymbols.bracket,
   MathSymbols.divide,
   MathSymbols.multiply,
   MathSymbols.minus,
   MathSymbols.plus,
   MathSymbols.undo,
-  MathSymbols.delete,
 ];
 
 typedef MathSymbolOnPress = void Function(MathSymbol symbol);
@@ -129,14 +128,14 @@ class _KeyPadState extends State<KeyPad> {
         child: Text(
           symbol.text,
           style: TextStyle(
-            color: isClear ? theme.primaryTextTheme.title.color : Colors.grey,
-            fontSize: 14.0 * 3.0,
+            color: Colors.grey,
+            fontSize: 14.0 * 2.5,
           ),
         ),
       );
 
       return FlatButton(
-        color: isClear ? theme.primaryColor : null,
+        color: isClear ? null : null,
         shape: const CircleBorder(),
         onPressed: () => this.widget.onPress(symbol),
         child: pad,
@@ -191,10 +190,9 @@ class _KeyPadState extends State<KeyPad> {
 
     switch (symbol) {
       case MathSymbols.delete:
-        opPadColor = theme.primaryColor;
-        opPad = Text(
-          symbol.text,
-          style: TextStyle(color: theme.primaryTextTheme.title.color, fontSize: fontSize),
+        opPadColor = null;
+        opPad = Icon(
+            Icons.backspace, color: theme.primaryColor,
         );
         break;
       default:
