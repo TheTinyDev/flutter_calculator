@@ -181,7 +181,7 @@ class _KeyPadState extends State<KeyPad> {
 
     final ThemeData theme = Theme.of(context);
 
-    final double fontSize = 14.0 * 1.5;
+    final double fontSize = 14.0 * 2.0;
     final ShapeBorder shape = const RoundedRectangleBorder(borderRadius: BorderRadius.zero);
 
     Color opPadColor;
